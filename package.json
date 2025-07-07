@@ -1,6 +1,7 @@
 {
   "name": "allard-vp-workshop",
   "version": "1.0.0",
+  "type": "module",
   "description": "Virtual Production Workshop - Voting and Information Platform",
   "main": "index.html",
   "scripts": {
@@ -30,6 +31,7 @@
     "vite": "^5.4.10",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14"
+    "tailwindcss": "^3.4.14",
+    "terser": "^5.36.0"
   }
 } 
