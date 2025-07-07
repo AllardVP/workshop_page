@@ -22,6 +22,15 @@ export const TOAST_TYPES = {
 
 export const SUPPORTED_IMAGE_FORMATS = /\.(jpg|jpeg|png|gif|webp)$/i
 
+export const VIDEO_CONFIG = {
+    MOBILE_BREAKPOINT: 768,
+    INTERSECTION_THRESHOLD: 0.1,
+    LOAD_DELAY: 300,
+    RETRY_ATTEMPTS: 3,
+    RETRY_DELAY: 1000,
+    LOAD_TIMEOUT: 15000
+}
+
 export const MESSAGES = {
     ENVIRONMENT_LIMIT: 'You can only select 2 environments',
     ALREADY_VOTED_ENV: 'You have already voted for environments',

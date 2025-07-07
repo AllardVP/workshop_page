@@ -6,6 +6,8 @@
     <title>Workshop Info - Allard VP</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://tube.allardvp.nl">
+    <link rel="dns-prefetch" href="https://tube.allardvp.nl">
     <meta name="description" content="Virtual Production Workshop Information - Learn about our VP Workshop process and benefits">
     <meta name="keywords" content="virtual production, workshop, film, cinema, training, education">
     <meta name="author" content="Allard VP">
@@ -51,13 +53,11 @@
                 <div class="relative">
                     <!-- Hero Video -->
                     <div class="relative bg-gray-100 dark:bg-gray-700 aspect-video rounded-t-2xl overflow-hidden">
-                        <iframe 
-                            title="Allard VP Showreel 2024" 
-                            src="https://tube.allardvp.nl/videos/embed/bQ7TtoKEpZdGVLuWXQUxmQ?loop=1&autoplay=1&muted=1&title=0&warningTitle=0&controlBar=0&peertubeLink=0&p2p=0" 
-                            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-                            class="absolute inset-0 w-full h-full transition-transform duration-700 hover:scale-105"
-                            allowfullscreen>
-                        </iframe>
+                        <div class="video-container"
+                             data-video-src="https://tube.allardvp.nl/videos/embed/bQ7TtoKEpZdGVLuWXQUxmQ?loop=1&autoplay=1&muted=1&title=0&warningTitle=0&controlBar=0&peertubeLink=0&p2p=0"
+                             data-video-title="Allard VP Showreel 2024"
+                             data-video-autoplay="true">
+                        </div>
                     </div>
                     <!-- Hero Overlay Content -->
                     <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-black/60 to-transparent flex items-center justify-center">
@@ -149,13 +149,11 @@
                             Bring your campaign idea, or we'll develop a spec concept that matches your DNA. Our Virtual Art Department (VAD) pre-loads a tailored environment, so you can focus on creating.
                         </p>
                         <div class="relative bg-gray-100 dark:bg-gray-600 rounded-xl aspect-video overflow-hidden group-hover:scale-105 transition-transform duration-300 mt-auto">
-                            <iframe 
-                                title="ING promo 2 scenes" 
-                                src="https://tube.allardvp.nl/videos/embed/7Pi1d8HPMDVLcDpdV99QAM?loop=1&autoplay=1&muted=1&title=0&warningTitle=0&controlBar=0&peertubeLink=0&p2p=0" 
-                                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-                                class="absolute inset-0 w-full h-full rounded-xl"
-                                allowfullscreen>
-                            </iframe>
+                            <div class="video-container"
+                                 data-video-src="https://tube.allardvp.nl/videos/embed/7Pi1d8HPMDVLcDpdV99QAM?loop=1&autoplay=1&muted=1&title=0&warningTitle=0&controlBar=0&peertubeLink=0&p2p=0"
+                                 data-video-title="ING promo 2 scenes - Shoot to Brief"
+                                 data-video-autoplay="true">
+                            </div>
                         </div>
                     </div>
                     
@@ -170,13 +168,11 @@
                             Work directly with a cinematographer to adjust lighting, select lenses, plan camera moves, and capture footage. You'll even cut a rough edit before the day ends.
                         </p>
                         <div class="relative bg-gray-100 dark:bg-gray-600 rounded-xl aspect-video overflow-hidden group-hover:scale-105 transition-transform duration-300 mt-auto">
-                            <iframe 
-                                title="Douane BTS NY" 
-                                src="https://tube.allardvp.nl/videos/embed/iT3R6eWcAYfbKWfqytCAGn?loop=1&autoplay=1&muted=1&title=0&warningTitle=0&controlBar=0&peertubeLink=0&p2p=0" 
-                                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-                                class="absolute inset-0 w-full h-full rounded-xl"
-                                allowfullscreen>
-                            </iframe>
+                            <div class="video-container"
+                                 data-video-src="https://tube.allardvp.nl/videos/embed/iT3R6eWcAYfbKWfqytCAGn?loop=1&autoplay=1&muted=1&title=0&warningTitle=0&controlBar=0&peertubeLink=0&p2p=0"
+                                 data-video-title="Douane BTS NY - Design-Build-Shoot"
+                                 data-video-autoplay="true">
+                            </div>
                         </div>
                     </div>
                     
@@ -191,13 +187,11 @@
                             Tackle a surprise genre brief, like a sci-fi corridor or a dark forest scene. It's a chance to think differently and explore new storytelling ideas.
                         </p>
                         <div class="relative bg-gray-100 dark:bg-gray-600 rounded-xl aspect-video overflow-hidden group-hover:scale-105 transition-transform duration-300 mt-auto">
-                            <iframe 
-                                title="Behind the Scenes of Our Halloween Special – Virtual Production Friday" 
-                                src="https://tube.allardvp.nl/videos/embed/jUCvTWw3eLSM7h3TXWm14L?loop=1&autoplay=1&muted=1&title=0&warningTitle=0&controlBar=0&peertubeLink=0&p2p=0" 
-                                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-                                class="absolute inset-0 w-full h-full rounded-xl"
-                                allowfullscreen>
-                            </iframe>
+                            <div class="video-container"
+                                 data-video-src="https://tube.allardvp.nl/videos/embed/jUCvTWw3eLSM7h3TXWm14L?loop=1&autoplay=1&muted=1&title=0&warningTitle=0&controlBar=0&peertubeLink=0&p2p=0"
+                                 data-video-title="Halloween Special - Creative Stretch Challenge"
+                                 data-video-autoplay="true">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -352,9 +346,15 @@
     </main>
 
 
-    <script>
+    <script type="module">
+        import { initializeVideoSystem, preconnectVideoSources } from './src/video.js';
+        
         // FAQ Accordion functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize video system
+            initializeVideoSystem();
+            preconnectVideoSources();
+            
             const faqItems = document.querySelectorAll('.faq-item');
             
             faqItems.forEach(item => {

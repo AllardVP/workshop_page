@@ -118,6 +118,54 @@
   .loading-spinner {
     @apply animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500;
   }
+
+  /* Video system styles */
+  .video-container {
+    @apply relative w-full h-full;
+  }
+
+  .video-placeholder {
+    @apply absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden cursor-pointer transition-all duration-300;
+  }
+
+  .video-placeholder:hover {
+    @apply bg-gray-200 dark:bg-gray-600;
+  }
+
+  .video-placeholder:hover .video-play-button {
+    @apply scale-110;
+  }
+
+  .video-play-button {
+    @apply w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center shadow-lg hover:bg-primary-600 transition-all duration-200;
+  }
+
+  .video-loading {
+    @apply absolute inset-0 flex items-center justify-center bg-gray-100/90 dark:bg-gray-700/90 backdrop-blur-sm;
+  }
+
+  .video-error {
+    @apply absolute inset-0 flex items-center justify-center bg-red-50 dark:bg-red-900/20 backdrop-blur-sm;
+  }
+
+  .video-retry {
+    @apply text-xs bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded transition-colors duration-200;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .video-placeholder {
+      @apply text-sm;
+    }
+    
+    .video-play-button {
+      @apply w-12 h-12;
+    }
+    
+    .video-play-button svg {
+      @apply w-5 h-5;
+    }
+  }
 }
 
 @layer utilities {
