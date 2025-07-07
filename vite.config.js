@@ -14,8 +14,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'supabase': ['@supabase/supabase-js'],
-          'vendor': ['@supabase/supabase-js']
+          'supabase': ['@supabase/supabase-js']
         },
         // Optimize asset filenames
         assetFileNames: (assetInfo) => {
