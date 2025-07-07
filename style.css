@@ -11,6 +11,19 @@
 }
 
 @layer components {
+  /* Logo theme switching */
+  .logo-container {
+    @apply relative;
+  }
+  
+  .logo-light {
+    @apply block dark:hidden;
+  }
+  
+  .logo-dark {
+    @apply hidden dark:block;
+  }
+  
   .environment-card {
     @apply bg-white dark:bg-gray-900 rounded-lg shadow-md cursor-pointer border-2 border-transparent hover:border-primary-300 dark:hover:border-primary-600 transition-all duration-300 hover:-translate-y-1 overflow-hidden;
     min-height: 280px;

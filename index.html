@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voting - Allard VP Workshop</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+    <link rel="icon" href="./img/avp_icon.ico">
     <style>
         /* Critical CSS for navigation to prevent FOUC */
         nav { 
@@ -37,13 +37,34 @@
             font-size: 1rem;
             font-weight: 700;
             color: #111827;
+            flex: 1;
         }
-        .nav-logo span:first-child {
-            font-size: 1.25rem;
+        .nav-title {
+            flex: 1;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #111827;
+        }
+        .nav-logo .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .nav-logo .logo-light {
+            display: block;
+            height: 2rem;
+            width: auto;
+        }
+        .nav-logo .logo-dark {
+            display: none;
+            height: 2rem;
+            width: auto;
         }
         .nav-links {
             display: flex;
             gap: 0.25rem;
+            flex: 1;
+            justify-content: flex-end;
         }
         .nav-links a {
             display: flex;
@@ -55,6 +76,7 @@
             transition: all 0.2s;
             text-decoration: none;
             font-size: 0.875rem;
+            text-align: center;
         }
         .nav-links a.active {
             background-color: #dbeafe;
@@ -79,6 +101,9 @@
         }
         @media (prefers-color-scheme: dark) {
             .nav-logo { color: #ffffff; }
+            .nav-logo .logo-light { display: none; }
+            .nav-logo .logo-dark { display: block; }
+            .nav-title { color: #ffffff; }
             .nav-links a.active {
                 background-color: #1e40af;
                 color: #dbeafe;
@@ -105,10 +130,15 @@
     <nav>
         <div class="nav-container">
             <div class="nav-content">
-                            <div class="nav-logo animate-fade-in">
-                <span class="text-xl sm:text-2xl animate-pulse-slow">🎬</span>
-                <span class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">Allard VP Workshop</span>
-            </div>
+                <div class="nav-logo animate-fade-in">
+                    <div class="logo-container">
+                        <img src="./img/avp_logo_black.svg" alt="Allard VP" class="logo-light h-8 w-auto">
+                        <img src="./img/avp_logo_white.svg" alt="Allard VP" class="logo-dark h-8 w-auto">
+                    </div>
+                </div>
+                <div class="nav-title animate-fade-in">
+                    <span class="text-base sm:text-lg font-bold">VP Workshop</span>
+                </div>
                 <div class="nav-links">
                     <a href="index.html" class="active">
                         Voting
