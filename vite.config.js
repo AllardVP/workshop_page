@@ -12,6 +12,10 @@ export default defineConfig({
     minify: 'esbuild',
     target: 'es2020',
     rollupOptions: {
+      input: {
+        main: 'index.html',
+        workshop: 'workshop.html'
+      },
       output: {
         manualChunks: {
           'supabase': ['@supabase/supabase-js']
