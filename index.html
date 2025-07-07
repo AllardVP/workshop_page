@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allard VP Workshop</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="description" content="Virtual Production Workshop - Vote for environments and share script ideas">
+    <meta name="keywords" content="virtual production, workshop, voting, film, cinema, environments">
+    <meta name="author" content="Allard VP">
+    <meta property="og:title" content="Allard VP Workshop">
+    <meta property="og:description" content="Vote for virtual environments and share script ideas for our VP Workshop">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://workshop.allardvp.nl">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Allard VP Workshop">
+    <meta name="twitter:description" content="Vote for virtual environments and share script ideas for our VP Workshop">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🎬</span>
+                    <span class="text-xl font-bold text-gray-900 dark:text-white">Allard VP Workshop</span>
+                </div>
+                <div class="flex space-x-4">
+                    <button id="voting-tab" class="px-4 py-2 rounded-md font-medium transition-colors duration-200 bg-primary-100 text-primary-800 dark:bg-primary-800 dark:text-primary-100">
+                        Voting
+                    </button>
+                    <button id="workshop-tab" class="px-4 py-2 rounded-md font-medium transition-colors duration-200 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+                        Workshop Info
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Voting Page -->
+        <div id="voting-page" class="fade-in visible">
+            <!-- Introduction Section -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
+                <h1 class="text-3xl font-bold mb-6 text-center">Welcome to the VP Workshop!</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 text-center max-w-4xl mx-auto">
+                    We're excited to have you participating in our VP Workshop! To make this an enjoyable and effective experience for all creatives and producers, please watch the video below which will educate you on the basics of virtual production and help you get the most out of our time together.
+                </p>
+                
+                <!-- Video Container -->
+                <div class="relative bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden aspect-video mb-6">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">🎥</div>
+                            <p class="text-gray-600 dark:text-gray-400">Educational Video Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Environment Voting Section -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold mb-4 text-center">Choose Two Virtual Locations</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-8 text-center max-w-3xl mx-auto">
+                    Select the virtual locations you'd like to work with during the workshop. The top 2 locations according to community votes will be the ones that Allard VP will prepare and set up for the day, ensuring we have the most engaging environments for your creative projects.
+                </p>
+                
+                <div id="environments-grid" class="grid grid-auto-fit gap-6 mb-8">
+                    <!-- Environment cards will be populated here -->
+                    <div class="text-center py-8" id="environments-loading">
+                        <div class="loading-spinner mx-auto mb-4"></div>
+                        <p class="text-gray-500 dark:text-gray-400">Loading environments...</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button id="vote-environments" class="bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 disabled:cursor-not-allowed" disabled>
+                        Vote for Selected Locations
+                    </button>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Select exactly 2 locations to enable voting</p>
+                </div>
+            </div>
+
+            <!-- Script Ideas Section -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-bold mb-4 text-center">Script Ideas</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-8 text-center max-w-3xl mx-auto">
+                    Share your creative script ideas for the workshop! Community members can vote on the ideas they find most exciting.
+                </p>
+                
+                <!-- Submit Script Idea -->
+                <div class="mb-8">
+                    <div class="max-w-2xl mx-auto">
+                        <textarea id="script-idea-input" placeholder="Share your script idea here..." class="w-full p-4 border border-gray-300 dark:border-gray-600 rounded-lg resize-none focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white" rows="4"></textarea>
+                        <div class="flex justify-between items-center mt-4">
+                            <span id="char-count" class="text-sm text-gray-500 dark:text-gray-400">0 / 500</span>
+                            <button id="submit-script-idea" class="bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200 disabled:cursor-not-allowed">
+                                Submit Idea
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Script Ideas List -->
+                <div id="script-ideas-list" class="space-y-4">
+                    <!-- Script ideas will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Workshop Info Page -->
+        <div id="workshop-page" class="fade-in hidden">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+                <h1 class="text-3xl font-bold mb-6 text-center">Workshop Information</h1>
+                <div class="text-center text-gray-600 dark:text-gray-300">
+                    <div class="text-6xl mb-4">🚧</div>
+                    <p class="text-lg">Coming Soon</p>
+                    <p class="text-sm mt-2">Workshop details will be available here shortly.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+        <span id="toast-message"></span>
+    </div>
+
+    <!-- Image Carousel Modal -->
+    <div id="image-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h3 id="modal-title" class="text-xl font-bold text-gray-900 dark:text-white"></h3>
+                    <p id="modal-description" class="text-gray-600 dark:text-gray-300"></p>
+                </div>
+                <button id="modal-close" class="btn-secondary p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="carousel-container" class="carousel-container">
+                    <div id="carousel-loading" class="absolute inset-0 flex items-center justify-center">
+                        <div class="loading-spinner"></div>
+                    </div>
+                    <div id="carousel-images" class="relative w-full h-full"></div>
+                    <button id="carousel-prev" class="carousel-nav left-4 hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button id="carousel-next" class="carousel-nav right-4 hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="carousel-dots" class="carousel-dots"></div>
+                <div id="carousel-error" class="hidden text-center py-8 text-gray-500 dark:text-gray-400">
+                    <div class="text-4xl mb-4">📷</div>
+                    <p>No images available for this location</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+</body>
+</html> 
