@@ -34,17 +34,58 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #111827;
+        }
+        .nav-logo span:first-child {
+            font-size: 1.25rem;
         }
         .nav-links {
             display: flex;
             gap: 0.25rem;
         }
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+        .nav-links a.active {
+            background-color: #dbeafe;
+            color: #1e40af;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        .nav-links a:not(.active) {
+            color: #4b5563;
+        }
         @media (min-width: 640px) {
             .nav-container { padding: 0 1.5rem; }
             .nav-links { gap: 0.5rem; }
+            .nav-links a { 
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+            }
+            .nav-logo { font-size: 1.125rem; }
+            .nav-logo span:first-child { font-size: 1.5rem; }
         }
         @media (min-width: 1024px) {
             .nav-container { padding: 0 2rem; }
+        }
+        @media (prefers-color-scheme: dark) {
+            .nav-logo { color: #ffffff; }
+            .nav-links a.active {
+                background-color: #1e40af;
+                color: #dbeafe;
+            }
+            .nav-links a:not(.active) {
+                color: #9ca3af;
+            }
         }
     </style>
     <link rel="stylesheet" href="./style.css">
@@ -69,10 +110,10 @@
                 <span class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">Allard VP Workshop</span>
             </div>
                 <div class="nav-links">
-                    <a href="index.html" class="flex items-center justify-center px-2 py-2 sm:px-4 sm:py-2 rounded-lg font-medium transition-all duration-200 bg-primary-100 text-primary-800 dark:bg-primary-800 dark:text-primary-100 shadow-sm text-sm sm:text-base">
+                    <a href="index.html" class="active">
                         Voting
                     </a>
-                    <a href="workshop.html" class="flex items-center justify-center px-2 py-2 sm:px-4 sm:py-2 rounded-lg font-medium transition-all duration-200 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm sm:text-base">
+                    <a href="workshop.html">
                         Workshop Info
                     </a>
                 </div>
