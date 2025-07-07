@@ -151,6 +151,24 @@
   }
 }
 
+@keyframes pulseAnimation {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulseAnimation 3s ease-in-out infinite;
+}
+
 /* Toast notifications */
 #toast.hidden {
   display: none !important;
