@@ -2,13 +2,14 @@
   "name": "allard-vp-workshop",
   "version": "1.0.0",
   "type": "module",
-  "description": "Virtual Production Workshop - Voting and Information Platform",
+  "description": "Allard VP Virtual Production Workshop",
   "main": "index.html",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "serve": "vite preview --port 3000"
+    "serve": "vite preview --port 3000",
+    "build:analyze": "vite build --mode analyze"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,9 @@
     "voting",
     "supabase",
     "tailwind",
-    "cloudflare-pages"
+    "cloudflare-pages",
+    "vite",
+    "es6-modules"
   ],
   "author": "Allard VP",
   "license": "MIT",
@@ -28,10 +31,10 @@
     "@supabase/supabase-js": "^2.45.4"
   },
   "devDependencies": {
-    "vite": "^5.4.10",
     "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
-    "terser": "^5.36.0"
+    "vite": "^7.0.2"
   }
-} 
+}

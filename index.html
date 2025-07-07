@@ -51,12 +51,15 @@
                 
                 <!-- Video Container -->
                 <div class="relative bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden aspect-video mb-6">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="text-center">
-                            <div class="text-6xl mb-4">🎥</div>
-                            <p class="text-gray-600 dark:text-gray-400">Educational Video Coming Soon</p>
-                        </div>
-                    </div>
+                    <iframe 
+                        src="https://www.youtube.com/embed/x_kOCqvfo2Q" 
+                        title="Virtual Production Workshop Educational Video"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen
+                        class="absolute inset-0 w-full h-full">
+                    </iframe>
                 </div>
             </div>
 
@@ -124,7 +127,7 @@
     </main>
 
     <!-- Toast Notification -->
-    <div id="toast" class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+    <div id="toast" class="fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50 hidden">
         <span id="toast-message"></span>
     </div>
 
